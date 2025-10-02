@@ -1,0 +1,23 @@
+{
+  "name": "bpmn-viewer",
+  "version": "1.0.0",
+  "description": "* display .bpmn files using bpmn-js viewer * list .bpmn files in /process-models * click on a model path to load the model and display it on the canvas",
+  "main": "index.js",
+  "scripts": {
+    "build:files": "node build-file-list.js",
+    "build:js": "esbuild src/app.js --bundle --outfile=dist/app.js --format=iife --loader:.css=css --external:*.woff --external:*.woff2",
+    "build": "npm run build:files && npm run build:js",
+    "dev": "npm run build && node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bpmn-js": "^18.7.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.10"
+  }
+}
